@@ -1,0 +1,371 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.56 0.25 302);
+  --primary-foreground: oklch(0.98 0.01 308);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.42 0.016 286);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.705 0.015 286.067);
+  --chart-1: oklch(0.83 0.11 306);
+  --chart-2: oklch(0.72 0.18 306);
+  --chart-3: oklch(0.63 0.23 304);
+  --chart-4: oklch(0.56 0.25 302);
+  --chart-5: oklch(0.50 0.24 302);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.56 0.25 302);
+  --sidebar-primary-foreground: oklch(0.98 0.01 308);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.705 0.015 286.067);
+}
+
+.dark {
+  --background: oklch(0.22 0.006 286);
+  --foreground: oklch(0.93 0.004 286);
+  --card: oklch(0.27 0.006 286);
+  --card-foreground: oklch(0.93 0.004 286);
+  --popover: oklch(0.27 0.006 286);
+  --popover-foreground: oklch(0.93 0.004 286);
+  --primary: oklch(0.63 0.23 304);
+  --primary-foreground: oklch(0.96 0.01 308);
+  --secondary: oklch(0.32 0.006 286);
+  --secondary-foreground: oklch(0.93 0.004 286);
+  --muted: oklch(0.32 0.006 286);
+  --muted-foreground: oklch(0.86 0.01 286);
+  --accent: oklch(0.34 0.01 286);
+  --accent-foreground: oklch(0.93 0.004 286);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.4 0.008 286);
+  --input: oklch(0.4 0.008 286);
+  --ring: oklch(0.62 0.02 286);
+  --chart-1: oklch(0.83 0.11 306);
+  --chart-2: oklch(0.72 0.18 306);
+  --chart-3: oklch(0.63 0.23 304);
+  --chart-4: oklch(0.56 0.25 302);
+  --chart-5: oklch(0.50 0.24 302);
+  --sidebar: oklch(0.24 0.006 286);
+  --sidebar-foreground: oklch(0.93 0.004 286);
+  --sidebar-primary: oklch(0.72 0.18 306);
+  --sidebar-primary-foreground: oklch(0.96 0.01 308);
+  --sidebar-accent: oklch(0.32 0.006 286);
+  --sidebar-accent-foreground: oklch(0.93 0.004 286);
+  --sidebar-border: oklch(0.4 0.008 286);
+  --sidebar-ring: oklch(0.62 0.02 286);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Pages still use light utility classes. Remap those surfaces in dark mode. */
+.dark .bg-white,
+.dark .bg-white\/80,
+.dark .bg-white\/90,
+.dark .bg-white\/70 {
+  background-color: var(--card);
+  color: var(--card-foreground);
+}
+
+.dark .bg-gray-50 {
+  background-color: var(--background);
+}
+
+.dark .bg-slate-50,
+.dark .bg-stone-50,
+.dark .bg-neutral-50 {
+  background-color: var(--muted);
+}
+
+.dark .bg-slate-100,
+.dark .bg-gray-100,
+.dark .bg-stone-100,
+.dark .bg-neutral-100,
+.dark .bg-purple-50,
+.dark .bg-violet-50,
+.dark .bg-indigo-50,
+.dark .bg-violet-100,
+.dark .bg-purple-100,
+.dark .bg-indigo-100,
+.dark [class*="bg-slate-50/"],
+.dark [class*="bg-gray-50/"],
+.dark [class*="bg-stone-50/"],
+.dark [class*="bg-violet-50/"],
+.dark [class*="bg-purple-50/"],
+.dark [class*="bg-emerald-50/"],
+.dark [class*="bg-rose-50/"],
+.dark [class*="bg-amber-50/"],
+.dark [class*="bg-blue-50/"],
+.dark [class*="bg-sky-50/"] {
+  background-color: var(--muted);
+}
+
+.dark [class*="from-violet-50"],
+.dark [class*="from-purple-50"],
+.dark [class*="from-indigo-50"],
+.dark [class*="from-emerald-50"],
+.dark [class*="from-rose-50"],
+.dark [class*="from-amber-50"],
+.dark [class*="from-blue-50"],
+.dark [class*="from-sky-50"],
+.dark [class*="from-teal-50"],
+.dark [class*="from-slate-50"],
+.dark [class*="from-white"],
+.dark [class*="to-white"],
+.dark [class*="to-slate-50"],
+.dark [class*="to-violet-50"] {
+  background-image: none;
+  background-color: var(--card);
+}
+
+html .text-slate-400,
+html .text-slate-500 {
+  color: oklch(0.4 0.016 286);
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-gray-700,
+.dark .text-gray-600,
+.dark .text-neutral-900,
+.dark .text-stone-900,
+.dark .text-stone-800,
+.dark .text-stone-700 {
+  color: var(--foreground);
+}
+
+.dark .text-slate-500,
+.dark .text-slate-400,
+.dark .text-gray-600,
+.dark .text-gray-500,
+.dark .text-gray-400,
+.dark .text-neutral-600,
+.dark .text-neutral-500,
+.dark .text-stone-600,
+.dark .text-stone-500 {
+  color: oklch(0.88 0.01 286);
+}
+
+.dark .border-slate-200,
+.dark .border-slate-100,
+.dark .border-slate-200\/80,
+.dark .border-gray-200,
+.dark .border-gray-100,
+.dark .border-stone-200,
+.dark .border-neutral-200,
+.dark .border-purple-200,
+.dark .border-purple-100,
+.dark .border-violet-200,
+.dark .border-violet-100,
+.dark .border-indigo-200,
+.dark .border-indigo-100 {
+  border-color: var(--border);
+}
+
+.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-gray-200 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--border);
+}
+
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover,
+.dark .hover\:bg-gray-50:hover,
+.dark .hover\:bg-gray-100:hover,
+.dark .hover\:bg-white:hover,
+.dark .hover\:bg-violet-50:hover,
+.dark .hover\:bg-purple-50:hover {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.dark .hover\:bg-red-50:hover,
+.dark .focus\:bg-red-50:focus,
+.dark .focus\:bg-red-50[data-highlighted],
+.dark .hover\:bg-rose-50:hover,
+.dark .focus\:bg-rose-50:focus,
+.dark .focus\:bg-rose-50[data-highlighted],
+.dark .hover\:bg-red-100:hover,
+.dark .hover\:bg-rose-100:hover {
+  background-color: color-mix(in oklab, var(--destructive) 16%, var(--popover));
+}
+
+.dark .focus\:bg-violet-50:focus,
+.dark .focus\:bg-violet-50[data-highlighted],
+.dark .focus\:bg-purple-50:focus,
+.dark .focus\:bg-purple-50[data-highlighted],
+.dark .focus\:bg-indigo-50:focus,
+.dark .focus\:bg-indigo-50[data-highlighted],
+.dark .focus\:bg-emerald-50:focus,
+.dark .focus\:bg-emerald-50[data-highlighted],
+.dark .focus\:bg-slate-50:focus,
+.dark .focus\:bg-slate-50[data-highlighted],
+.dark .focus\:bg-slate-100:focus,
+.dark .focus\:bg-slate-100[data-highlighted],
+.dark .focus\:bg-gray-50:focus,
+.dark .focus\:bg-gray-100:focus,
+.dark .focus\:bg-white:focus {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.dark .focus\:text-violet-700:focus,
+.dark .focus\:text-violet-600:focus,
+.dark .focus\:text-purple-700:focus,
+.dark .focus\:text-emerald-700:focus,
+.dark .focus\:text-slate-700:focus {
+  color: var(--accent-foreground);
+}
+
+.dark .placeholder\:text-slate-400::placeholder,
+.dark .placeholder\:text-gray-400::placeholder,
+.dark .placeholder\:text-slate-500::placeholder {
+  color: var(--muted-foreground);
+}
+
+.dark input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.dark textarea,
+.dark select {
+  background-color: var(--muted);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+
+.dark .recharts-cartesian-grid line,
+.dark .recharts-cartesian-axis-line,
+.dark .recharts-cartesian-axis-tick-line {
+  stroke: var(--border);
+}
+
+.dark .recharts-text {
+  fill: var(--muted-foreground);
+}
+
+/* Tables must scroll inside the page. Otherwise they widen the page and the search bar runs off the screen. */
+main [class~="overflow-x-auto"] {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 639px) {
+  /* Phone browsers cover the last rows. Leave room to scroll them clear. */
+  main {
+    padding-bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  main .bg-gradient-to-r.flex.items-center.justify-between {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  main [class*="max-w-sm"],
+  main [class*="max-w-xs"],
+  main [class*="max-w-md"] {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Tab tracks use !bg-violet-50, which beats the normal remap. */
+.dark [class*="!bg-violet-50"],
+.dark [class*="!bg-purple-50"],
+.dark [class*="!bg-slate-50"] {
+  background-color: var(--muted) !important;
+  border-color: var(--border) !important;
+}
+
+.dark [class*="!text-violet-500"]:not([data-state="active"]),
+.dark [class*="!text-violet-600"]:not([data-state="active"]) {
+  color: var(--muted-foreground) !important;
+}
+
+.dark [data-state="active"][class*="!text-white"] {
+  color: var(--primary-foreground) !important;
+}
+
+/* Light slate shadows read as a white glow on dark menus. */
+.dark [data-slot="dropdown-menu-content"],
+.dark [data-slot="popover-content"],
+.dark [data-slot="select-content"],
+.dark [data-slot="combobox-content"],
+.dark [class*="shadow-slate-200"],
+.dark [class*="shadow-slate-100"],
+.dark [class*="shadow-gray-200"] {
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-color: transparent;
+  --tw-ring-shadow: 0 0 #0000;
+  box-shadow: 0 0 0 1px var(--border);
+}
